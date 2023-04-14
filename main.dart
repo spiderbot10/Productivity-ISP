@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Declares the Todolist page
 class Todo {
   Todo({required this.name, required this.checked});
   final String name;
@@ -83,6 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 */
+
+//This helps mark out the tasks 
 class TodoItem extends StatelessWidget {
   TodoItem({
     required this.todo,
@@ -101,6 +103,7 @@ class TodoItem extends StatelessWidget {
     );
   }
 
+//This helps with allowing for a typing screen to appear when a button is tapped
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -115,6 +118,7 @@ class TodoItem extends StatelessWidget {
   }
 }
 
+
 class TodoList extends StatefulWidget {
   @override
   _TodoListState createState() => new _TodoListState();
@@ -123,6 +127,8 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   final TextEditingController _textFieldController = TextEditingController();
   final List<Todo> _todos = <Todo>[];
+
+//This controls the button prompts and the text that appears 
 
   @override
   Widget build(BuildContext context) {
@@ -159,6 +165,7 @@ class _TodoListState extends State<TodoList> {
     _textFieldController.clear();
   }
 
+  // Helps with button prompting and ensuring that nobody can type if the button isn't pressed 
   Future<void> _displayDialog() async {
     return showDialog<void>(
       context: context,
@@ -184,6 +191,8 @@ class _TodoListState extends State<TodoList> {
     );
   }
 }
+
+//Dictates the background and colors of the app
 
 class TodoApp extends StatelessWidget {
   @override
